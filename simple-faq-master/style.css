@@ -83,6 +83,7 @@ header {
   background-color: white;
   text-align: center;
   padding: 2rem;
+  font-size: 1.25rem;
 }
 
 main {
@@ -104,6 +105,7 @@ section:first-of-type {
   border-bottom: solid 1px #cfd2d8;
 }
 
+section,
 p:not(.header-subtext) {
   padding-block: 1rem;
 }
