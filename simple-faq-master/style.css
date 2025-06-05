@@ -135,6 +135,10 @@ ul {
   padding: 1rem;
 }
 
+li {
+  margin-block: 0.5rem;
+}
+
 a {
   text-decoration: none;
 }
