@@ -82,12 +82,12 @@ body {
 header {
   background-color: white;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   font-size: 1.25rem;
 }
 
 main {
-  padding-block: 2rem;
+  padding-block: 2.5rem;
 }
 
 .wrapper {
