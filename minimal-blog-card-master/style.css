@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"),
+    url("./assets/fonts/Sora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  font-size: 0.875rem;
+}
+
+article {
+  padding: 1rem 1rem 1.25rem 1rem;
+  background-color: white;
+  max-width: 23rem;
+  box-shadow: 0.5rem 0.5rem 0.75rem 0px rgba(85, 85, 85, 0.08);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+  color: #20293a;
+}
+
+img {
+  border-radius: inherit;
+}
+
+.category {
+  background-color: #f2eafd;
+  max-width: fit-content;
+  color: #7c19ee;
+  padding: 0.375rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+p {
+  color: #394150;
+}
+
+p:nth-of-type(2) {
+  margin-top: -0.625rem;
+  margin-bottom: 0.25rem;
+}
+
+p:last-of-type {
+  font-size: 0.75rem;
+}
+
+hr {
+  width: calc(100% + 2rem);
+  margin-inline: -1rem;
+  border: 1px solid #e5eaf0;
+}
