@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Medium"),
+    url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins SemiBold"),
+    url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  text-align: center;
+}
+
+main {
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+img {
+  margin-inline: auto;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+p {
+  color: #6c727f;
+}
+
+h1 + p {
+  font-size: 1.25rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.03),
+    0px 8px 12px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+}
+
+input {
+  border-color: transparent;
+  outline: solid 1px#6C727F;
+}
+
+input::placeholder {
+  text-align: center;
+  font-weight: 500;
+}
+
+input,
+button {
+  padding-block: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+button {
+  border-color: transparent;
+  background-color: #284bce;
+  color: white;
+  font-weight: 600;
+}
+
+button + p {
+  font-size: 0.875rem;
+}
