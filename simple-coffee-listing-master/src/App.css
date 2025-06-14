@@ -197,6 +197,14 @@ p {
   margin-inline: auto;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 .coffee-list__card {
   position: relative;
   border-radius: var(--coffee-border-radius);
