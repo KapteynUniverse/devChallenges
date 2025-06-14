@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "DMSans";
+  src: local("DMSans"),
+    url("/fonts/DMSans-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary-bg-color: #111315;
+  --primary-text-color: #fef7ee;
+  --secondary-bg-color: #1b1d1f;
+  --secondary-text-color: #6f757c;
+  --primary-info-bg-color: #bee3cc;
+  --primary-info-text-color: #1b1d1f;
+  --secondary-info-bg-color: #f6c768;
+  --secondary-info-text-color: #302522;
+  --disabled-text-color: #6f757c;
+  --danger-text-color: #ed735d;
+  --coffee-border-radius: 0.5rem;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+#root {
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button {
+  background-color: transparent;
+  color: var(--primary-text-color);
+  border-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+  margin-inline: 0.5rem;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: var(--secondary-text-color);
+}
+
+button.active:hover,
+button.active:focus {
+  background-color: var(--primary-bg-color);
+}
+
+button:not(.active):hover,
+button:not(.active):focus {
+  background-color: var(--secondary-text-color);
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  color: var(--primary-text-color);
+  background-image: url("/images/bg-cafe-sm.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: DMSans, sans-serif;
+}
+
+main {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+  margin: clamp(5rem, 0rem + 12.5vw, 10rem) auto;
+  margin-inline: auto;
+  padding-block: 3rem;
+  width: 90%;
+  border-radius: var(--coffee-border-radius);
+}
+
+.main-heading {
+  position: relative;
+}
+
+.main-heading > p {
+  color: var(--secondary-text-color);
+  max-width: 45ch;
+  margin-bottom: 1rem;
+  margin-inline: auto;
+}
+
+.main-heading__svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: lighten;
+}
+
+p {
+  font-size: 0.875rem;
+}
+
+.coffee-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  place-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 55rem;
+  margin-inline: auto;
+}
+
+.coffee-list__card {
+  position: relative;
+  border-radius: var(--coffee-border-radius);
+}
+
+.coffee-list__card > div {
+  margin-top: 0.5rem;
+}
+
+.coffee-list__img {
+  border-radius: inherit;
+}
+
+.coffee-list__popular {
+  background-color: var(--secondary-info-bg-color);
+  color: var(--secondary-info-text-color);
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: bold;
+}
+
+.coffee-list__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coffee-list__price {
+  background-color: var(--primary-info-bg-color);
+  color: var(--primary-info-text-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--coffee-border-radius);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.coffee-list__bottom,
+.coffee-list__bottom > div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.coffee-list__bottom {
+  justify-content: space-between;
+}
+
+.coffee-list__votes,
+.coffee-list__noRating {
+  color: var(--disabled-text-color);
+}
+
+.coffee-list__isAvailable {
+  color: var(--danger-text-color);
+}
+
+@media (min-width: 40rem) {
+  body {
+    background-image: url("/images/bg-cafe.jpg");
+  }
+  .main-heading__svg {
+    left: 70%;
+  }
+}
+@media (min-width: 64rem) {
+  body {
+    background-image: url("/images/bg-cafe-lg.jpg");
+  }
+  .main-heading__svg {
+    left: 60%;
+  }
+}
