@@ -18,6 +18,7 @@
   --secondary-info-text-color: #302522;
   --disabled-text-color: #6f757c;
   --danger-text-color: #ed735d;
+  --active-btn-bg-color: #4d5562;
   --coffee-border-radius: 0.5rem;
 }
 
@@ -125,7 +126,7 @@ button {
 }
 
 button.active {
-  background-color: var(--secondary-text-color);
+  background-color: var(--active-btn-bg-color);
 }
 
 button.active:hover,
