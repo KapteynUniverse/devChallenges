@@ -22,7 +22,10 @@ const Card = ({
       {popular && <p className="coffee-list__popular">Popular</p>}
       <div className="coffee-list__info">
         <p className="coffee-list__name">{name}</p>
-        <p className="coffee-list__price">{price}</p>
+        <p className="coffee-list__price">
+          <span className="sr-only">Price: </span>
+          {price}
+        </p>
       </div>
       <div className="coffee-list__bottom">
         <div>
