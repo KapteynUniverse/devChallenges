@@ -159,6 +159,7 @@ main {
   margin-inline: auto;
   padding-block: 3rem;
   width: 90%;
+  max-width: 80rem;
   border-radius: var(--coffee-border-radius);
 }
 
