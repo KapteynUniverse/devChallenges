@@ -13,22 +13,24 @@ const CoffeeList = ({ isAvailable }: { isAvailable: boolean }) => {
     : coffees.filter((coffee) => coffee.available);
 
   return (
-    <div className="coffee-list">
+    <ul className="coffee-list" role="list">
       {filteredCoffees.map(
         ({ id, available, image, name, popular, price, rating, votes }) => (
-          <Card
-            key={id}
-            available={available}
-            image={image}
-            name={name}
-            popular={popular}
-            price={price}
-            rating={rating}
-            votes={votes}
-          />
+          <li>
+            <Card
+              key={id}
+              available={available}
+              image={image}
+              name={name}
+              popular={popular}
+              price={price}
+              rating={rating}
+              votes={votes}
+            />
+          </li>
         )
       )}
-    </div>
+    </ul>
   );
 };
 
