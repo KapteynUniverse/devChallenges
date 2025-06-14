@@ -28,12 +28,18 @@ const Card = ({
         <div>
           {rating !== null ? <FilledStarIcon /> : <EmptyStarIcon />}
           {rating !== null ? (
-            <p className="coffee-list__rating">{rating}</p>
+            <p className="coffee-list__rating">
+              <span className="sr-only">Rating: </span>
+              {rating}
+            </p>
           ) : (
             <p className="coffee-list__noRating">No rating</p>
           )}
           {votes !== 0 ? (
-            <p className="coffee-list__votes">({votes} votes)</p>
+            <p className="coffee-list__votes">
+              <span aria-hidden="true">(</span>
+              {votes} votes<span aria-hidden="true">)</span>
+            </p>
           ) : null}
         </div>
         {!available && <p className="coffee-list__isAvailable">Sold Out</p>}
