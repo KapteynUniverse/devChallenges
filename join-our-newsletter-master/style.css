@@ -25,6 +25,16 @@
   font-display: swap;
 }
 
+:root {
+  --primary-bg-color: #f9fafb;
+  --primary-text-color: #000000;
+  --secondary-bg-color: #ffffff;
+  --secondary-text-color: #6c727f;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -114,70 +124,102 @@ h6 {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--primary-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
-  max-width: 40rem;
+  width: min(90%, 45rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
-img {
-  margin-inline: auto;
-}
-
 h1 {
-  font-weight: 600;
+  font-weight: var(--fw-600);
   font-size: 3rem;
-}
-
-p {
-  color: #6c727f;
 }
 
 h1 + p {
   font-size: 1.25rem;
 }
 
+p {
+  color: var(--secondary-text-color);
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: min(90%, 34.375rem);
   margin-top: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.03),
     0px 8px 12px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
 }
 
 input {
+  --outline-color: #e5e7eb;
+  background-color: var(--primary-bg-color);
   border-color: transparent;
-  outline: solid 1px#6C727F;
+  outline: solid 1px var(--outline-color);
+  padding-left: 1rem;
+  transition: outline-color 0.3s ease-in-out;
 }
 
 input::placeholder {
+  --placeholder-clr: #394150;
   text-align: center;
-  font-weight: 500;
+  font-weight: var(--fw-500);
+  color: var(--placeholder-clr);
 }
 
 input,
 button {
-  padding-block: 0.5rem;
-  border-radius: 0.25rem;
+  padding-block: 0.75rem;
+  border-radius: inherit;
 }
 
 button {
+  --btn-bg-color: #284bce;
   border-color: transparent;
-  background-color: #284bce;
-  color: white;
-  font-weight: 600;
+  background-color: var(--btn-bg-color);
+  color: var(--secondary-bg-color);
+  font-weight: var(--fw-600);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+input:hover,
+input:focus {
+  --outline-color: black;
+}
+
+input:not(:placeholder-shown):user-valid {
+  --outline-color: darkgreen;
+  background-image: url(./assets/images/icon-check.png);
+  background-position: 95%;
+  background-repeat: no-repeat;
+}
+
+input:not(:placeholder-shown):user-invalid {
+  --outline-color: tomato;
+  background-image: url(./assets/images/icon-error.svg);
+  background-position: 95%;
+  background-repeat: no-repeat;
+}
+
+button:hover,
+button:focus {
+  --btn-bg-color: #123099;
 }
 
 button + p {
